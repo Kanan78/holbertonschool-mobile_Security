@@ -1,1 +1,1 @@
-Holberton{c2_domains_are_dangerous}
+Holberton{c2.domains.are.dangerous}
