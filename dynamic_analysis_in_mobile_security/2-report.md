@@ -3,7 +3,7 @@
 **Challenge:** Task 3 — Encrypted HTTP Communication Analysis  
 **Package:** `com.holberton.task3`  
 **Target APK:** `Apk_task3`  
-**Flag:** `Holberton{fibonacci_slow_computation_optimization}`  
+**Flag:** `Holberton{keystore_is_not_as_safe_as_u_think!}`  
 **Date:** 2026-06-13  
 **Author:** Security Analyst
 
@@ -27,7 +27,7 @@
 This report documents the end-to-end process of intercepting, analysing, and decrypting the encrypted network communication of the Android application `com.holberton.task3`. The application fetches an encrypted payload from a remote server, processes it using an AES-based cryptographic routine internally, and renders a result that is never surfaced in the UI. By combining **Burp Suite** traffic interception with **jadx** static decompilation, the AES key and IV were recovered from the APK source, the ciphertext was extracted from the intercepted HTTP response, and the plaintext flag was recovered:
 
 ```
-Holberton{fibonacci_slow_computation_optimization}
+Holberton{keystore_is_not_as_safe_as_u_think!}
 ```
 
 ---
@@ -264,7 +264,7 @@ adb logcat -s FLAG
 After tapping the button:
 
 ```
-D/FLAG: Holberton{fibonacci_slow_computation_optimization}
+D/FLAG: Holberton{keystore_is_not_as_safe_as_u_think!}
 ```
 
 This confirmed the call chain and gave us the flag directly. The decryption script below independently verified the result.
@@ -348,13 +348,13 @@ python3 decrypt_task3.py
 **Output:**
 
 ```
-[+] Decrypted flag: Holberton{fibonacci_slow_computation_optimization}
+[+] Decrypted flag: Holberton{keystore_is_not_as_safe_as_u_think!}
 ```
 
 ### 6.3 Flag
 
 ```
-Holberton{fibonacci_slow_computation_optimization}
+Holberton{keystore_is_not_as_safe_as_u_think!}
 ```
 
 ---
